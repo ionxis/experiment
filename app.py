@@ -5,7 +5,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     return {
-        "code: 300,
+        "code" : 300,
         "message" : "unauthorized"
     }
 
