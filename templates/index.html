@@ -1,22 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IONXIS :: Under construction</title>
-    <link href="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.css" rel="stylesheet">
-    <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.js"></script>
-    <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>IONXIS :: Under construction</title>
+	<link href="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.css" rel="stylesheet">
+	<script type="module" src="https://cdn.jsdelivr.net/npm/beercss@5.0.3/dist/cdn/beer.min.js"></script>
+	<script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.4/dist/cdn/material-dynamic-colors.min.js"></script>
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+	<style>
+		*{font-family: 'Roboto Mono' !important}
+	</style>
 </head>
-<body class="white">
-    <p class="center-align">
-        Deploying IONXIS soon...
-    </p>
-    <div class="m l">
-        <img src="/static/desktop.svg" alt="" class="responsive">
-    </div>
-    <div class="s">
-        <img src="/static/mobile.svg" alt="" class="responsive">
-    </div>
+<body class="light">
+	<header>
+		<nav>
+			<h6 class="max primary-text">
+				mysql:root@127.0.0.1:3306/tables
+			</h6>
+			<a href="/config" class="transparent button">
+				Config
+			</a>
+			<a href="/connections" class="transparent button">
+				Connections
+			</a>
+			<a href="/databases" class="transparent button">
+				Databases
+			</a>
+			<a href="/tables" class="transparent button">
+				Tables
+			</a>
+			<a href="/views" class="transparent button">
+				Views
+			</a>
+		</nav>
+	</header>
+	<main>
+		<nav>
+			<div class="field label border max">
+			<input type="text" autofocus>
+			<label for="">SQL query</label>
+		</div>
+		<a href="" class="button transparent">
+			Run query
+		</a>
+
+		</nav>
+		<table class="border">
+			<tr>
+				<th>#</th>
+				<th>Company name</th>
+				<th>Website</th>
+				<th>Status</th>
+			</tr>
+			{% for row in range(1,13) %}
+			<tr>
+				<td>{{ loop.index }}</td>
+				<td>
+					Contoso GmbH
+				</td>
+				<td>
+					<label class="checkbox">
+						<input type="checkbox">
+						<span></span>
+					</label>
+				</td>
+				<td>
+					<a href="" class="link">
+						https://contoso.com
+					</a>
+				</td>
+				<td>
+					<a href="" class="link">
+						info@email.com
+					</a>
+				</td>
+				<td>
+					<span class="green small-round">&nbsp;&nbsp;&nbsp;&nbsp;</span>
+				</td>
+				<td>
+					<progress value="{{ range(3, 10) | random }}" max="10"></progress>
+				</td>
+			</tr>
+			{% endfor %}
+		</table>
+	</main>
 </body>
 </html>
